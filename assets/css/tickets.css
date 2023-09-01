@@ -1,0 +1,19 @@
+
+
+@media only screen and (max-width: 768px) {
+
+  .title-header {
+    color: var(--OFC---White, #fff);
+    font-family: Inter;
+    font-size: 32px !important;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 40px; /* 125% */
+  }
+
+
+  .input-search-ticket{
+    margin-top: 0px !important;
+  }
+  
+}
