@@ -15,5 +15,27 @@
   .input-search-ticket{
     margin-top: 0px !important;
   }
+  .btn-add-mobile{
+    width: auto !important;
+    height: auto !important;
+    padding: 16px 18px !important;
+    margin-top: unset;
+}
+
+.table-mobile{
+    border-radius: 10px;
+    margin-top: 24px;
+    padding: 16px 16px 0px 16px;
+    border: 1px solid #303030;
+}
+
+.btn-load-more{
+    margin-top: 24px !important;
+    margin-bottom: 10px;
+}
+
+.btn-close-modal{
+    width: 100%;
+}
   
 }

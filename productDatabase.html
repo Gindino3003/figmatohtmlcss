@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Payments</title>
+    <title>Database</title>
 
     <link
       href="assets/vendor/bootstrap/css/bootstrap.min.css"
@@ -15,14 +15,14 @@
     />
     <link href="./assets/css/sidebar.css" rel="stylesheet" />
     <link href="./assets/css/global.css" rel="stylesheet" />
-    <link href="./assets/css/tickets.css" rel="stylesheet" />
+    <link href="./assets/css/databasebulk.css" rel="stylesheet" />
     <link href="./assets/css/header.css" rel="stylesheet" />
   </head>
   <body>
     <section class="container-fluid main-box">
       <div class="">
-              <!-- sidebar -->
-              <div class="app-sidebar-wrapper d-none d-md-block">
+               <!-- sidebar -->
+               <div class="app-sidebar-wrapper d-none d-md-block">
                 <div id="sidebar" class="sidebar">
                   <div class="sidebar-container">
                     <div class="sidebar-logo-container">
@@ -1293,8 +1293,8 @@
           <!-- header -->
           <div class="row header">
             <div class="col d-none d-md-flex">
-              <h1 class="title-header">Tickets</h1>
-              
+              <h1 class="title-header">Database</h1>
+
               <button class="btn-go-to-shop">Go to Shop</button>
             </div>
             
@@ -1560,490 +1560,892 @@
             </div>
           </div>
 
-          <!-- content-tickets -->
+          <!-- content-database -->
           <div class="container-fluid">
+            <div class="container-fluid col d-block d-md-none">
+              <h1 class="title-header">Database</h1>
 
-            <div class="col d-block d-md-none">
-                <h1 class="title-header">Tickets</h1>
-                
-                <button class="btn-go-to-shop">Go to Shop</button>
-              </div>
+              <button class="btn-go-to-shop">Go to Shop</button>
+            </div>
 
-            <div class="row mt-4 g-md-3 g-3">
-
-              <!-- transaction -->
-              <div class="col-lg-12">
-                <div class="bg-secondary rounded-2 p-3">
-                  <div
-                    class="row d-flex align-items-center title-box-transaction"
-                  >
-                    <div class="col-12 col-md-7 d-flex align-items-center">
-                      <p class="title-table-box d-none d-md-flex">Tickets</p>
-                    </div>
-                    <div class="col-12 col-md-5 input-mt input-search-ticket">
-                      <div class="position-relative">
-                        <!-- Occupies 8 columns (3/3 width) on medium screens and up -->
-                        <svg
-                          class="ic-input ic-white"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="19"
-                          height="19"
-                          viewBox="0 0 19 19"
-                          fill="none"
-                        >
-                          <circle
-                            cx="8"
-                            cy="8"
-                            r="7"
-                            stroke="#7D7D7D"
-                            stroke-width="2"
+            <div class="container-fluid row mt-4 g-md-3 g-3">
+              <!-- chart and table -->
+              <div class="col-12">
+                <div class="bg-secondary row rounded-2 g-4 p-4">
+                  <div class="col-12 container-fluid">
+                    <div class="row g-2">
+                      <div class="col-xxl-10 col-lg-10 col-md-8 col-12">
+                        <div class="position-relative">
+                          <!-- Occupies 8 columns (3/3 width) on medium screens and up -->
+                          <svg
+                            class="ic-input ic-search"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="19"
+                            height="19"
+                            viewBox="0 0 19 19"
+                            fill="none"
+                          >
+                            <circle
+                              cx="8"
+                              cy="8"
+                              r="7"
+                              stroke="#7D7D7D"
+                              stroke-width="2"
+                            />
+                            <path
+                              d="M13 13L17.5 18"
+                              stroke="#7D7D7D"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                          <input
+                            type="text"
+                            class="form-control input-ic-p"
+                            placeholder="Search"
                           />
-                          <path
-                            d="M13 13L17.5 18"
-                            stroke="#7D7D7D"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
+                        </div>
+                      </div>
+                      <div
+                        class="col-xxl-1 col-lg-1 col-md-2 col-12 d-flex align-items-center"
+                      >
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckDefault"
                           />
-                        </svg>
-                        <input
-                          type="text"
-                          class="form-control input-ic-p"
-                          placeholder="Search"
-                        />
+                          <label
+                            class="form-check-label"
+                            for="flexCheckDefault"
+                          >
+                            Regex?
+                          </label>
+                        </div>
+                      </div>
+                      <div
+                        class="col-xxl-1 col-lg-1 col-md-2 col-12 d-flex align-items-center"
+                      >
+                        <button class="btn-seek">Seek</button>
+                      </div>
+
+                      <!-- chart -->
+                      <div class="col-12 col-md-4">
+                        <div class="width: 100%; height: auto">
+                          <img
+                            width="100%"
+                            height="100%"
+                            src="./assets/img/chart-database.png"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                      <!-- table -->
+                      <div class="col-12 col-md-8">
+                        <div class="box-table">
+                          <!-- table mobile -->
+                          <div class="mt-30 table-mobile">
+                            <div class="table-mb">
+                              <div class="row-table d-flex">
+                                <div class="value-table-mb">
+                                    <span>Aku-Ankka Promo</span>
+                                </div>
+                              </div>
+                              <div class="row-table d-flex">
+                                <div class="title-table-mb">Date :</div>
+                                <div class="value-table-mb">
+                                  <span>2020-05-04 09:18:16</span>
+                                </div>
+                              </div>
+                              <div class="row-table d-flex">
+                                <div class="title-table-mb">Action :</div>
+                                <div class="value-table-mb">
+                                    <div class="d-flex">
+                                        <div>
+                                          <svg
+                                            class="btn-update"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                          >
+                                            <path
+                                              d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13"
+                                              stroke="#BBBBBB"
+                                              stroke-width="2"
+                                              stroke-linecap="round"
+                                              stroke-linejoin="round"
+                                            />
+                                            <path
+                                              d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z"
+                                              stroke="#BBBBBB"
+                                              stroke-width="2"
+                                              stroke-linecap="round"
+                                              stroke-linejoin="round"
+                                            />
+                                          </svg>
+                                        </div>
+                                        <div>
+                                          <svg
+                                            class="btn-delete"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                          >
+                                            <path
+                                              d="M3 6H21"
+                                              stroke="#BBBBBB"
+                                              stroke-width="2"
+                                              stroke-linecap="round"
+                                              stroke-linejoin="round"
+                                            />
+                                            <path
+                                              d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6"
+                                              stroke="#BBBBBB"
+                                              stroke-width="2"
+                                              stroke-linecap="round"
+                                              stroke-linejoin="round"
+                                            />
+                                            <path
+                                              d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6"
+                                              stroke="#BBBBBB"
+                                              stroke-width="2"
+                                              stroke-linecap="round"
+                                              stroke-linejoin="round"
+                                            />
+                                          </svg>
+                                        </div>
+                                      </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="table-mb">
+                                <div class="row-table d-flex">
+                                  <div class="value-table-mb">
+                                      <span>Aku-Ankka Promo</span>
+                                  </div>
+                                </div>
+                                <div class="row-table d-flex">
+                                  <div class="title-table-mb">Date :</div>
+                                  <div class="value-table-mb">
+                                    <span>2020-05-04 09:18:16</span>
+                                  </div>
+                                </div>
+                                <div class="row-table d-flex">
+                                  <div class="title-table-mb">Action :</div>
+                                  <div class="value-table-mb">
+                                      <div class="d-flex">
+                                          <div>
+                                            <svg
+                                              class="btn-update"
+                                              xmlns="http://www.w3.org/2000/svg"
+                                              viewBox="0 0 24 24"
+                                              fill="none"
+                                            >
+                                              <path
+                                                d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13"
+                                                stroke="#BBBBBB"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                              />
+                                              <path
+                                                d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z"
+                                                stroke="#BBBBBB"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                              />
+                                            </svg>
+                                          </div>
+                                          <div>
+                                            <svg
+                                              class="btn-delete"
+                                              xmlns="http://www.w3.org/2000/svg"
+                                              viewBox="0 0 24 24"
+                                              fill="none"
+                                            >
+                                              <path
+                                                d="M3 6H21"
+                                                stroke="#BBBBBB"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                              />
+                                              <path
+                                                d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6"
+                                                stroke="#BBBBBB"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                              />
+                                              <path
+                                                d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6"
+                                                stroke="#BBBBBB"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                              />
+                                            </svg>
+                                          </div>
+                                        </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="table-mb">
+                                <div class="row-table d-flex">
+                                  <div class="value-table-mb">
+                                      <span>Aku-Ankka Promo</span>
+                                  </div>
+                                </div>
+                                <div class="row-table d-flex">
+                                  <div class="title-table-mb">Date :</div>
+                                  <div class="value-table-mb">
+                                    <span>2020-05-04 09:18:16</span>
+                                  </div>
+                                </div>
+                                <div class="row-table d-flex">
+                                  <div class="title-table-mb">Action :</div>
+                                  <div class="value-table-mb">
+                                      <div class="d-flex">
+                                          <div>
+                                            <svg
+                                              class="btn-update"
+                                              xmlns="http://www.w3.org/2000/svg"
+                                              viewBox="0 0 24 24"
+                                              fill="none"
+                                            >
+                                              <path
+                                                d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13"
+                                                stroke="#BBBBBB"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                              />
+                                              <path
+                                                d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z"
+                                                stroke="#BBBBBB"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                              />
+                                            </svg>
+                                          </div>
+                                          <div>
+                                            <svg
+                                              class="btn-delete"
+                                              xmlns="http://www.w3.org/2000/svg"
+                                              viewBox="0 0 24 24"
+                                              fill="none"
+                                            >
+                                              <path
+                                                d="M3 6H21"
+                                                stroke="#BBBBBB"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                              />
+                                              <path
+                                                d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6"
+                                                stroke="#BBBBBB"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                              />
+                                              <path
+                                                d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6"
+                                                stroke="#BBBBBB"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                              />
+                                            </svg>
+                                          </div>
+                                        </div>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+
+                          <!-- table pc -->
+                          <div class="mt-30 table-pc">
+                            <!-- table item -->
+                            <table class="table mt-2">
+                              <!-- title table pc -->
+                              <thead
+                                class="d-md-table-header-group table-header-pc"
+                              >
+                                <tr>
+                                  <th
+                                    scope="col"
+                                    class="d-block d-md-table-cell"
+                                  >
+                                    Content
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    class="d-block d-md-table-cell"
+                                  >
+                                    Date
+                                  </th>
+                                  <th
+                                    scope="col"
+                                    class="d-block d-md-flex justify-content-end"
+                                  >
+                                    Action
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tr>
+                                <td class="fs-20 d-block d-md-table-cell">
+                                  <span>Aku-Ankka Promo</span>
+                                </td>
+                                <td class="fs-20 d-block d-md-table-cell">
+                                  2020-05-04 09:18:16
+                                </td>
+                                <td
+                                  class="fs-20 d-block d-md-flex justify-content-end"
+                                >
+                                  <div class="d-flex">
+                                    <div>
+                                      <svg
+                                        class="btn-update"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                      >
+                                        <path
+                                          d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                        <path
+                                          d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                      </svg>
+                                    </div>
+                                    <div>
+                                      <svg
+                                        class="btn-delete"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                      >
+                                        <path
+                                          d="M3 6H21"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                        <path
+                                          d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                        <path
+                                          d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="fs-20 d-block d-md-table-cell">
+                                  <span>Aku-Ankka Promo</span>
+                                </td>
+                                <td class="fs-20 d-block d-md-table-cell">
+                                  2020-05-04 09:18:16
+                                </td>
+                                <td
+                                  class="fs-20 d-block d-md-flex justify-content-end"
+                                >
+                                  <div class="d-flex">
+                                    <div>
+                                      <svg
+                                        class="btn-update"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                      >
+                                        <path
+                                          d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                        <path
+                                          d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                      </svg>
+                                    </div>
+                                    <div>
+                                      <svg
+                                        class="btn-delete"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                      >
+                                        <path
+                                          d="M3 6H21"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                        <path
+                                          d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                        <path
+                                          d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="fs-20 d-block d-md-table-cell">
+                                  <span>Aku-Ankka Promo</span>
+                                </td>
+                                <td class="fs-20 d-block d-md-table-cell">
+                                  2020-05-04 09:18:16
+                                </td>
+                                <td
+                                  class="fs-20 d-block d-md-flex justify-content-end"
+                                >
+                                  <div class="d-flex">
+                                    <div>
+                                      <svg
+                                        class="btn-update"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                      >
+                                        <path
+                                          d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                        <path
+                                          d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                      </svg>
+                                    </div>
+                                    <div>
+                                      <svg
+                                        class="btn-delete"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                      >
+                                        <path
+                                          d="M3 6H21"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                        <path
+                                          d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                        <path
+                                          d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="fs-20 d-block d-md-table-cell">
+                                  <span>Aku-Ankka Promo</span>
+                                </td>
+                                <td class="fs-20 d-block d-md-table-cell">
+                                  2020-05-04 09:18:16
+                                </td>
+                                <td
+                                  class="fs-20 d-block d-md-flex justify-content-end"
+                                >
+                                  <div class="d-flex">
+                                    <div>
+                                      <svg
+                                        class="btn-update"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                      >
+                                        <path
+                                          d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                        <path
+                                          d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                      </svg>
+                                    </div>
+                                    <div>
+                                      <svg
+                                        class="btn-delete"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                      >
+                                        <path
+                                          d="M3 6H21"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                        <path
+                                          d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                        <path
+                                          d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="fs-20 d-block d-md-table-cell">
+                                  <span>Aku-Ankka Promo</span>
+                                </td>
+                                <td class="fs-20 d-block d-md-table-cell">
+                                  2020-05-04 09:18:16
+                                </td>
+                                <td
+                                  class="fs-20 d-block d-md-flex justify-content-end"
+                                >
+                                  <div class="d-flex">
+                                    <div>
+                                      <svg
+                                        class="btn-update"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                      >
+                                        <path
+                                          d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                        <path
+                                          d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                      </svg>
+                                    </div>
+                                    <div>
+                                      <svg
+                                        class="btn-delete"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                      >
+                                        <path
+                                          d="M3 6H21"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                        <path
+                                          d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                        <path
+                                          d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="fs-20 d-block d-md-table-cell">
+                                  <span>Aku-Ankka Promo</span>
+                                </td>
+                                <td class="fs-20 d-block d-md-table-cell">
+                                  2020-05-04 09:18:16
+                                </td>
+                                <td
+                                  class="fs-20 d-block d-md-flex justify-content-end"
+                                >
+                                  <div class="d-flex">
+                                    <div>
+                                      <svg
+                                        class="btn-update"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                      >
+                                        <path
+                                          d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                        <path
+                                          d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                      </svg>
+                                    </div>
+                                    <div>
+                                      <svg
+                                        class="btn-delete"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                      >
+                                        <path
+                                          d="M3 6H21"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                        <path
+                                          d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                        <path
+                                          d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6"
+                                          stroke="#BBBBBB"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                        />
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-
-                  <!-- table mobile -->
-                  <div class="mt-30 table-mobile">
-                    <!-- table item -->
-                    <div class="table-mb">
-                        <div  class="row-table d-flex">
-                            <div class="value-table-mb"><span>#2212</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">User :</div>
-                            <div class="value-table-mb"><span>Marvin McKinney</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Subject :</div>
-                            <div class="value-table-mb"><span>Business Consulting</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Category :</div>
-                            <div class="value-table-mb"><span>Other Coin </span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Status :</div>
-                            <div class="value-table-mb"><span class="state-open">Open</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Date :</div>
-                            <div class="value-table-mb"><span>2020-05-05 10:21:13</span></div>
-                        </div> 
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Action :</div>
-                            <div class="value-table-mb"> <div class="d-flex">
-                                <div>
-                                    <svg class="btn-update" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                                        <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                </div>
-                                <div><svg class="btn-delete" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                                    <path d="M3 6H21" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg></div>
-                            </div></div>
-                        </div> 
-                    </div>
-                    <!-- table item -->
-                    <div class="table-mb">
-                        <div  class="row-table d-flex">
-                            <div class="value-table-mb"><span>#2212</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">User :</div>
-                            <div class="value-table-mb"><span>Marvin McKinney</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Subject :</div>
-                            <div class="value-table-mb"><span>Business Consulting</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Category :</div>
-                            <div class="value-table-mb"><span>Other Coin </span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Status :</div>
-                            <div class="value-table-mb"><span class="state-closed">Closed</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Date :</div>
-                            <div class="value-table-mb"><span>2020-05-05 10:21:13</span></div>
-                        </div> 
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Action :</div>
-                            <div class="value-table-mb"> <div class="d-flex">
-                                <div>
-                                    <svg class="btn-update" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                                        <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                </div>
-                                <div><svg class="btn-delete" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                                    <path d="M3 6H21" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg></div>
-                            </div></div>
-                        </div> 
-                    </div>
-                  </div>
-
-                  <!-- table pc -->
-                  <div class="mt-30 table-pc">
-                    <!-- table item -->
-                    <table class="table mt-2 table-striped">
-                      <!-- title table pc -->
-                      <thead class="d-md-table-header-group table-header-pc">
-                        <tr class="">
-                          <th scope="col" class="d-block d-md-table-cell">
-                            ID
-                          </th>
-                          <th scope="col" class="d-block d-md-table-cell">
-                            Username <span class="d-inline d-md-none">:</span>
-                          </th>
-                          <th scope="col" class="d-block d-md-table-cell">
-                            Bitcoin Transaction ID
-                            <span class="d-inline d-md-none">:</span>
-                          </th>
-                          <th scope="col" class="d-block d-md-table-cell">
-                            Amount <span class="d-inline d-md-none">:</span>
-                          </th>
-                          <th scope="col" class="d-block d-md-table-cell">
-                            State <span class="d-inline d-md-none">:</span>
-                          </th>
-                          <th scope="col" class="d-block d-md-table-cell">
-                            Date <span class="d-inline d-md-none">:</span>
-                          </th>
-                          <th scope="col" class="d-block d-md-flex justify-content-end">
-                            Action <span class="d-inline d-md-none">:</span>
-                          </th>
-                        </tr>
-                      </thead>
-                      <tr>
-                        <td scope="row" class="d-block d-md-table-cell">
-                          #CS0212
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          Bessie Cooper
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          f4184fc5964
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">€0.00</td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          <span class="state-closed">Close</span>
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          2020-05-05 10:21:13
-                        </td>
-                        <td class="fs-20 d-block d-md-flex justify-content-end">
-                            <div class="d-flex">
-                                <div>
-                                    <svg class="btn-update" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                                        <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                </div>
-                                <div><svg class="btn-delete" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                                    <path d="M3 6H21" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg></div>
-                            </div>
-                          </td>
-                      </tr>
-                      <tr>
-                        <td scope="row" class="d-block d-md-table-cell">
-                          #CS0212
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          Bessie Cooper
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          f4184fc5964
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">€0.00</td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          <span class="state-open">Open</span>
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          2020-05-05 10:21:13
-                        </td>
-                        <td class="fs-20 d-block d-md-flex justify-content-end">
-                            <div class="d-flex">
-                                <div>
-                                    <svg class="btn-update" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                                        <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                </div>
-                                <div><svg class="btn-delete" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                                    <path d="M3 6H21" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg></div>
-                            </div>
-                          </td>
-                      </tr>
-                      <tr>
-                        <td scope="row" class="d-block d-md-table-cell">
-                          #CS0212
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          Bessie Cooper
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          f4184fc5964
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">€0.00</td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          <span class="state-Answered">Answered</span>
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          2020-05-05 10:21:13
-                        </td>
-                        <td class="fs-20 d-block d-md-flex justify-content-end">
-                            <div class="d-flex">
-                                <div>
-                                    <svg class="btn-update" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                                        <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                </div>
-                                <div><svg class="btn-delete" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                                    <path d="M3 6H21" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg></div>
-                            </div>
-                          </td>
-                      </tr>
-                      <tr>
-                        <td scope="row" class="d-block d-md-table-cell">
-                          #CS0212
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          Bessie Cooper
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          f4184fc5964
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">€0.00</td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          <span class="state-Answered">Answered</span>
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          2020-05-05 10:21:13
-                        </td>
-                        <td class="fs-20 d-block d-md-flex justify-content-end">
-                            <div class="d-flex">
-                                <div>
-                                    <svg class="btn-update" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                                        <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                </div>
-                                <div><svg class="btn-delete" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                                    <path d="M3 6H21" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg></div>
-                            </div>
-                          </td>
-                      </tr>
-                      <tr>
-                        <td scope="row" class="d-block d-md-table-cell">
-                          #CS0212
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          Bessie Cooper
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          f4184fc5964
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">€0.00</td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          <span class="state-Answered">Answered</span>
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          2020-05-05 10:21:13
-                        </td>
-                        <td class="fs-20 d-block d-md-flex justify-content-end">
-                            <div class="d-flex">
-                                <div>
-                                    <svg class="btn-update" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                                        <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                </div>
-                                <div><svg class="btn-delete" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                                    <path d="M3 6H21" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg></div>
-                            </div>
-                          </td>
-                      </tr>
-                      <tr>
-                        <td scope="row" class="d-block d-md-table-cell">
-                          #CS0212
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          Bessie Cooper
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          f4184fc5964
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">€0.00</td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          <span class="state-Answered">Answered</span>
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          2020-05-05 10:21:13
-                        </td>
-                        <td class="fs-20 d-block d-md-flex justify-content-end">
-                            <div class="d-flex">
-                                <div>
-                                    <svg class="btn-update" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                                        <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                </div>
-                                <div><svg class="btn-delete" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                                    <path d="M3 6H21" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg></div>
-                            </div>
-                          </td>
-                      </tr>
-                      <tr>
-                        <td scope="row" class="d-block d-md-table-cell">
-                          #CS0212
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          Bessie Cooper
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          f4184fc5964
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">€0.00</td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          <span class="state-Answered">Paid</span>
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          2020-05-05 10:21:13
-                        </td>
-                        <td class="fs-20 d-block d-md-flex justify-content-end">
-                            <div class="d-flex">
-                                <div>
-                                    <svg class="btn-update" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                                        <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        </svg>
-                                </div>
-                                <div><svg class="btn-delete" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
-                                    <path d="M3 6H21" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg></div>
-                            </div>
-                          </td>
-                      </tr>
-                    </table>
-                  </div>
-                  <div class="col-lg-12 d-block d-md-none">
-                    <button class="btn-load-more mt-2">
-                        Load more
-                      </button>
-                  </div>
                 </div>
               </div>
+              <!-- tab -->
+              <div class="col-12">
+                <div class="bg-secondary mt-0 row rounded-2 g-4 p-4">
+                <div class="container-fluid title-import">
+                    Input Import
+                </div>
+                  <div class="tab-content container-fluid" id="nav-tabContent">
+                    <div
+                      class="tab-pane fade active show row gy-3"
+                      id="nav-home"
+                      role="tabpanel"
+                      aria-labelledby="nav-home-tab"
+                    >
+                      <div>
+                        <label for="address">Input</label>
+                        <textarea
+                          style="height: unset"
+                          class="form-control"
+                          placeholder="Input"
+                        ></textarea>
+                      </div>
 
+                      <div
+                        class="d-flex gap-4 justify-content-md-start justify-content-between"
+                      >
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            onclick="handleCheckbox()"
+                            checked
+                            type="radio"
+                            name="flexRadioDefault"
+                            id="line-by-line-radio"
+                          />
+                          <label
+                            class="form-check-label"
+                            onclick="handleCheckbox()"
+                            for="line-by-line-radio"
+                          >
+                            Line by Line
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            onclick="handleCheckbox()"
+                            type="radio"
+                            name="flexRadioDefault"
+                            id="separator-radio"
+                          />
+                          <label
+                            class="form-check-label"
+                            onclick="handleCheckbox()"
+                            for="separator-radio"
+                          >
+                            with separator
+                          </label>
+                        </div>
+                      </div>
 
-                   <!-- pagination & info -->
-              <div class="col-lg-12 d-none d-md-block">
-                <div
-                  class="bg-secondary rounded-2 p-3 d-flex justify-content-between align-items-center"
-                >
-                  <div class="f-flex info-paginition">
-                    Showing <span class="info-paginition-span">1 to 10</span> of
-                    <span class="info-paginition-span">96</span> entries
-                  </div>
-                <!-- pagination -->
-                  <div>
-                    <nav aria-label="Page navigation example">
-                      <ul class="pagination d-flex align-items-center">
-                        <li class="page-item">
-                          <a
-                            class="arow-pagination-prev"
-                            href="#"
-                            aria-label="Previous"
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="8"
-                              height="13"
-                              viewBox="0 0 8 13"
-                              fill="none"
+                      <!-- form line-by-line-->
+                      <div id="box-line-by-line">
+                        <label for="address" class="d-block d-md-none">Content</label>
+                        <input
+                        type="text"
+                        class="form-control"
+                        placeholder="test"
+                      />
+                      </div>
+
+                      <!-- form Seperator -->
+                      <div id="box-separator">
+                        <div class="row gx-3">
+                          <div class="col-12 col-md-3 mb-md-0 mb-4">
+                            <label for="address">Seperator</label>
+                            <select
+                              
+                              class="form-select custom-select"
+                              aria-label="Default select example"
                             >
-                              <path
-                                d="M7.59963e-08 6.62708C7.22201e-08 6.94375 0.158333 7.26042 0.316666 7.41875L5.54167 12.6437C6.01667 13.1188 6.80833 13.1188 7.28333 12.6438C7.75833 12.1687 7.75833 11.3771 7.28333 10.9021L3.00833 6.62708L7.28333 2.35208C7.75833 1.87708 7.75833 1.08541 7.28333 0.610415C6.80833 0.135414 6.01667 0.135414 5.54167 0.610415L0.475 5.67708C0.158334 5.99375 7.97725e-08 6.31042 7.59963e-08 6.62708Z"
-                                fill="#7D7D7D"
-                              />
-                            </svg>
-                          </a>
-                        </li>
-                        <li class="page-item">
-                          <a class="pagi-page pagi-page-active" href="">1</a>
-                        </li>
-                        <li class="page-item">
-                          <a class="pagi-page" href="">2</a>
-                        </li>
-                        <li class="page-item">
-                          <a class="pagi-page" href="">3</a>
-                        </li>
-                        <span class="pagi-page">...</span>
-                        <li class="page-item">
-                          <a class="pagi-page" href="">10</a>
-                        </li>
-                        <li class="page-item">
-                          <a
-                            class="arow-pagination-next"
-                            href="#"
-                            aria-label="Next"
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="9"
-                              height="13"
-                              viewBox="0 0 9 13"
-                              fill="none"
-                            >
-                              <path
-                                d="M8.19336 6.37292C8.19336 6.05625 8.03503 5.73958 7.87669 5.58125L2.65169 0.35625C2.17669 -0.11875 1.38503 -0.11875 0.910026 0.35625C0.435026 0.83125 0.435026 1.62292 0.910026 2.09792L5.18503 6.37292L0.910026 10.6479C0.435026 11.1229 0.435026 11.9146 0.910026 12.3896C1.38503 12.8646 2.17669 12.8646 2.65169 12.3896L7.71836 7.32292C8.03503 7.00625 8.19336 6.68958 8.19336 6.37292Z"
-                                fill="#7D7D7D"
-                              />
-                            </svg>
-                          </a>
-                        </li>
-                      </ul>
-                    </nav>
+                              <option selected><p class="option-custom">This week</p></option>
+                              <option value="1"><p>yesterday</p></option>
+                              <option value="2"><p>last week</p></option>
+                              <option value="3"><p>last month</p></option>
+                            </select>
+                          </div>
+
+                          <div class="col-12 col-md-9">
+                            <label for="address">Content</label>
+                            <textarea
+                              style="height: unset"
+                              class="form-control"
+                              placeholder="Example Content"
+                            ></textarea>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <button class="btn-go-to-shop m-0">Import</button>
+                      </div>
+                    </div>
+                    <div
+                      class="tab-pane fade row gy-3"
+                      id="nav-profile"
+                      role="tabpanel"
+                      aria-labelledby="nav-profile-tab"
+                    >
+                      <div>
+                        <label for="address">Content</label>
+                        <textarea
+                          style="height: unset"
+                          class="form-control"
+                          placeholder="Example Content"
+                        ></textarea>
+                      </div>
+
+                      <div>
+                        <button class="btn-go-to-shop m-0">Import</button>
+                      </div>
+                    </div>
+
+                    <div class="mt-4 ">
+                        <div class="container-fluid title-import">
+                            One Import
+                        </div>
+                        <div>
+                            <label for="address">Content</label>
+                            <textarea
+                              style="height: unset"
+                              class="form-control"
+                              placeholder="Input"
+                            ></textarea>
+                          </div>
+                          <div>
+                            <button class="btn-go-to-shop m-0 btn-ip" >Import</button>
+                          </div>
+
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2055,5 +2457,19 @@
 
     <!-- End Sidebar-->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      function handleCheckbox() {
+        if (document.getElementById("line-by-line-radio").checked) {
+          document.getElementById("box-line-by-line").style.display = "block";
+          document.getElementById("box-separator").style.display = "none";
+        }
+
+        if (document.getElementById("separator-radio").checked) {
+          document.getElementById("box-line-by-line").style.display = "none";
+          document.getElementById("box-separator").style.display = "block";
+        }
+      }
+    </script>
   </body>
 </html>

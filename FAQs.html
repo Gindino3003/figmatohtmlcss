@@ -15,9 +15,10 @@
     />
     <link href="./assets/css/sidebar.css" rel="stylesheet" />
     <link href="./assets/css/global.css" rel="stylesheet" />
-    <link href="./assets/css/payment.css" rel="stylesheet" />
+    <link href="./assets/css/faq.css" rel="stylesheet" />
     <link href="./assets/css/header.css" rel="stylesheet" />
   </head>
+
   <body>
     <section class="container-fluid main-box">
       <div class="">
@@ -1292,8 +1293,10 @@
                   </div>
           <!-- header -->
           <div class="row header">
-            <div class="col d-none d-md-block">
-              <h1 class="title-header">Payments</h1>
+            <div class="col d-none d-md-flex">
+              <h1 class="title-header">FAQs</h1>
+              
+              <button class="btn-go-to-shop">Go to Shop</button>
             </div>
             
             <div class="col d-flex d-md-none">
@@ -1558,440 +1561,16 @@
             </div>
           </div>
 
-          <!-- content-payment -->
+          <!-- content-tickets -->
           <div class="container-fluid">
+
+            <div class="col d-block d-md-none">
+                <h1 class="title-header">FAQs</h1>
+                
+                <button class="btn-go-to-shop">Go to Shop</button>
+              </div>
+
             <div class="row mt-4 g-md-3 g-3">
-              <!-- Request Transfer -->
-              <div class="col-lg-4">
-                <div
-                  class="bg-secondary rounded-2 px-40 py-30 request-transfer"
-                >
-                  <form action="">
-                    <div>
-                      <label for="address">Destination Address</label>
-                      <input
-                        name="address"
-                        type="text"
-                        class="form-control"
-                        placeholder="Address"
-                        aria-label="Username"
-                        aria-describedby="basic-addon1"
-                      />
-                    </div>
-                    <div class="mt-28">
-                      <label for="">Amount</label>
-                      <div class="input-group row">
-                        <div class="col-md-10 col-lg-9 col-9">
-                          <!-- Occupies 8 columns (3/3 width) on medium screens and up -->
-                          <input
-                            type="text"
-                            class="form-control input-select"
-                            placeholder="Amount"
-                          />
-                        </div>
-                        <!-- Occupies 4 columns (1/3 width) on medium screens and up -->
-                        <div class="col-md-2 col-lg-3 col-3">
-                          <select class="form-select select-input">
-                            <option selected>USD</option>
-                            <option value="option1">EUR</option>
-                            <option value="option2">GBP</option>
-                            <option value="option3">AWG</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="mt-28">
-                      <label for="">Transaction fee per byte transferred</label>
-                      <div class="input-group row">
-                        <div class="col-md-10 col-lg-9 col-9 position-relative">
-                          <!-- Occupies 8 columns (3/3 width) on medium screens and up -->
-                          <img
-                            class="ic-input"
-                            src="./assets/img/ic_money.png"
-                            alt=""
-                          />
-                          <input
-                            type="number"
-                            class="form-control input-select-ic"
-                            placeholder="Amount"
-                          />
-                        </div>
-                        <!-- Occupies 4 columns (1/3 width) on medium screens and up -->
-                        <div class="col-md-2 col-lg-3 col-3">
-                          <select class="form-select select-input">
-                            <option selected>BTC</option>
-                            <option value="option1">EUR</option>
-                            <option value="option2">GBP</option>
-                            <option value="option3">AWG</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="mt-28">
-                      <button class="btn-request-transfer">
-                        Request Transfer
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-              <!-- chart and payout -->
-              <div class="col-lg-8">
-                <div class="row container-fluid gy-3">
-                  <div class="col-12">
-                    <img
-                      width="100%"
-                      height="100%"
-                      src="./assets/img/chart_revenue.png"
-                      alt=""
-                    />
-                  </div>
-                  <!-- payout -->
-                  <div class="col-12">
-                    <div class="bg-secondary rounded-2 p-3">
-                      <div class="row d-flex align-items-center">
-                        <div class="col-12 col-md-3">
-                          <p class="title-table-box">Payout</p>
-                        </div>
-                        <div class="col-12 col-md-7 px-md-2 input-mt">
-                          <div class="position-relative">
-                            <!-- Occupies 8 columns (3/3 width) on medium screens and up -->
-                            <svg
-                              class="ic-input"
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="19"
-                              height="19"
-                              viewBox="0 0 19 19"
-                              fill="none"
-                            >
-                              <circle
-                                cx="8"
-                                cy="8"
-                                r="7"
-                                stroke="#7D7D7D"
-                                stroke-width="2"
-                              />
-                              <path
-                                d="M13 13L17.5 18"
-                                stroke="#7D7D7D"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                            </svg>
-                            <input
-                              type="text"
-                              class="form-control input-ic-p"
-                              placeholder="Search"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-12 col-md-2 select-mt">
-                          <div>
-                            <select
-                              class="form-select custom-select"
-                              aria-label="Default select example"
-                            >
-                              <option selected>This week</option>
-                              <option value="1">yesterday</option>
-                              <option value="2">last week</option>
-                              <option value="3">last month</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-
-                      <!-- table mobile -->
-                      <div class="mt-30 table-mobile">
-                        <div class="table-mb">
-                            <div  class="row-table d-flex">
-                                <div class="value-table-mb">
-                                    <div
-                                class="d-flex align-items-center gap-2 fs-20"
-                              >
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="12"
-                                  height="12"
-                                  viewBox="0 0 22 22"
-                                  fill="none"
-                                >
-                                  <circle
-                                    cx="11"
-                                    cy="11"
-                                    r="11"
-                                    fill="#7D7D7D"
-                                  />
-                                </svg>
-                                fd1fg25...63
-                              </div>
-                                </div>
-                            </div>
-                            <div  class="row-table d-flex">
-                                <div class="title-table-mb">Amount :</div>
-                                <div class="value-table-mb"><span>$1.25 <span class="unit-table">USD</span></span></div>
-                            </div>
-                            <div  class="row-table d-flex">
-                                <div class="title-table-mb">Fee :</div>
-                                <div class="value-table-mb"><span> $1,846 <span class="unit-table">USD</span></span></div>
-                            </div>
-                            <div  class="row-table d-flex">
-                                <div class="title-table-mb">Status :</div>
-                                <div class="value-table-mb"><span class="status-complete"
-                                    >Complete</span
-                                  ></div>
-                            </div>
-                            <div  class="row-table d-flex">
-                                <div class="title-table-mb">Date :</div>
-                                <div class="value-table-mb"><span>2020-05-05 10:21:13</span></div>
-                            </div>
-                        </div>
-                        <div class="table-mb">
-                            <div  class="row-table d-flex">
-                                <div class="value-table-mb">
-                                    <div
-                                class="d-flex align-items-center gap-2 fs-20"
-                              >
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="12"
-                                  height="12"
-                                  viewBox="0 0 22 22"
-                                  fill="none"
-                                >
-                                  <circle
-                                    cx="11"
-                                    cy="11"
-                                    r="11"
-                                    fill="#7D7D7D"
-                                  />
-                                </svg>
-                                fd1fg25...63
-                              </div>
-                                </div>
-                            </div>
-                            <div  class="row-table d-flex">
-                                <div class="title-table-mb">Amount :</div>
-                                <div class="value-table-mb"><span>$1.25 <span class="unit-table">USD</span></span></div>
-                            </div>
-                            <div  class="row-table d-flex">
-                                <div class="title-table-mb">Fee :</div>
-                                <div class="value-table-mb"><span> $1,846 <span class="unit-table">USD</span></span></div>
-                            </div>
-                            <div  class="row-table d-flex">
-                                <div class="title-table-mb">Status :</div>
-                                <div class="value-table-mb"><span class="status-complete"
-                                    >Complete</span
-                                  ></div>
-                            </div>
-                            <div  class="row-table d-flex">
-                                <div class="title-table-mb">Date :</div>
-                                <div class="value-table-mb"><span>2020-05-05 10:21:13</span></div>
-                            </div>
-                        </div>
-                        <div class="table-mb">
-                            <div  class="row-table d-flex">
-                                <div class="value-table-mb">
-                                    <div
-                                class="d-flex align-items-center gap-2 fs-20"
-                              >
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="12"
-                                  height="12"
-                                  viewBox="0 0 22 22"
-                                  fill="none"
-                                >
-                                  <circle
-                                    cx="11"
-                                    cy="11"
-                                    r="11"
-                                    fill="#7D7D7D"
-                                  />
-                                </svg>
-                                fd1fg25...63
-                              </div>
-                                </div>
-                            </div>
-                            <div  class="row-table d-flex">
-                                <div class="title-table-mb">Amount :</div>
-                                <div class="value-table-mb"><span>$1.25 <span class="unit-table">USD</span></span></div>
-                            </div>
-                            <div  class="row-table d-flex">
-                                <div class="title-table-mb">Fee :</div>
-                                <div class="value-table-mb"><span> $1,846 <span class="unit-table">USD</span></span></div>
-                            </div>
-                            <div  class="row-table d-flex">
-                                <div class="title-table-mb">Status :</div>
-                                <div class="value-table-mb"><span class="status-complete"
-                                    >Complete</span
-                                  ></div>
-                            </div>
-                            <div  class="row-table d-flex">
-                                <div class="title-table-mb">Date :</div>
-                                <div class="value-table-mb"><span>2020-05-05 10:21:13</span></div>
-                            </div>
-                        </div>
-                      </div>
-
-                      <!-- table pc -->
-                      <div class="mt-30 table-pc">
-                        <!-- table item -->
-                        <table class="table mt-2">
-                          <!-- title table pc -->
-                          <thead
-                            class="d-md-table-header-group table-header-pc"
-                          >
-                            <tr>
-                              <th scope="col" class="d-block d-md-table-cell">
-                                Destination
-                              </th>
-                              <th scope="col" class="d-block d-md-table-cell">
-                                Amount <span class="d-inline d-md-none">:</span>
-                              </th>
-                              <th scope="col" class="d-block d-md-table-cell">
-                                Fee <span class="d-inline d-md-none">:</span>
-                              </th>
-                              <th scope="col" class="d-block d-md-table-cell">
-                                Status <span class="d-inline d-md-none">:</span>
-                              </th>
-                              <th scope="col" class="d-block d-md-table-cell">
-                                Date <span class="d-inline d-md-none">:</span>
-                              </th>
-                            </tr>
-                          </thead>
-                          <tr>
-                            <td scope="row" class="d-block d-md-table-cell">
-                              <div
-                                class="d-flex align-items-center gap-2 fs-20"
-                              >
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  class="ic-table"
-                                  viewBox="0 0 22 22"
-                                  fill="none"
-                                >
-                                  <circle
-                                    cx="11"
-                                    cy="11"
-                                    r="11"
-                                    fill="#7D7D7D"
-                                  />
-                                </svg>
-                                fd1fg25...63
-                              </div>
-                            </td>
-                            <td class="fs-20 d-block d-md-table-cell">
-                              $1.25 <span class="unit-table">USD</span>
-                            </td>
-                            <td class="fs-20 d-block d-md-table-cell">
-                              $1,846 <span class="unit-table">USD</span>
-                            </td>
-                            <td
-                              scope="col"
-                              class="fs-20 d-block d-md-table-cell"
-                            >
-                              <span class="status-complete"
-                                >Complete</span
-                              >
-                            </td>
-                            <td class="fs-20 d-block d-md-table-cell">
-                              2020-05-05 10:21:13
-                            </td>
-                          </tr>
-                          <tr>
-                            <td scope="row" class="d-block d-md-table-cell">
-                              <div
-                                class="d-flex align-items-center gap-2 fs-20"
-                              >
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  class="ic-table"
-                                  viewBox="0 0 22 22"
-                                  fill="none"
-                                >
-                                  <circle
-                                    cx="11"
-                                    cy="11"
-                                    r="11"
-                                    fill="#7D7D7D"
-                                  />
-                                </svg>
-                                fd1fg25...63
-                              </div>
-                            </td>
-                            <td
-                              scope="col"
-                              class="fs-20 d-block d-md-table-cell"
-                            >
-                              $7.93 <span class="unit-table">USD</span>
-                            </td>
-                            <td
-                              scope="col"
-                              class="fs-20 d-block d-md-table-cell"
-                            >
-                              $2.15 <span class="unit-table">USD</span>
-                            </td>
-                            <td
-                              scope="col"
-                              class="fs-20 d-block d-md-table-cell"
-                            >
-                              <span class="status-payout-cancelled"
-                                >Cancelled</span
-                              >
-                            </td>
-                            <td
-                              scope="col"
-                              class="fs-20 d-block d-md-table-cell"
-                            >
-                              2020-05-05 10:21:13
-                            </td>
-                          </tr>
-                          <tr>
-                            <td scope="row" class="d-block d-md-table-cell">
-                              <div
-                                class="d-flex align-items-center gap-2 fs-20"
-                              >
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  class="ic-table"
-                                  viewBox="0 0 22 22"
-                                  fill="none"
-                                >
-                                  <circle
-                                    cx="11"
-                                    cy="11"
-                                    r="11"
-                                    fill="#7D7D7D"
-                                  />
-                                </svg>
-                                fd1fg25...63
-                              </div>
-                            </td>
-                            <td class="fs-20 d-block d-md-table-cell">
-                              $1.25 <span class="unit-table">USD</span>
-                            </td>
-                            <td class="fs-20 d-block d-md-table-cell">
-                              $1,846 <span class="unit-table">USD</span>
-                            </td>
-                            <td
-                              scope="col"
-                              class="fs-20 d-block d-md-table-cell"
-                            >
-                              <span class="status-complete"
-                                >Complete</span
-                              >
-                            </td>
-                            <td class="fs-20 d-block d-md-table-cell">
-                              2020-05-05 10:21:13
-                            </td>
-                          </tr>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
               <!-- transaction -->
               <div class="col-lg-12">
@@ -1999,255 +1578,161 @@
                   <div
                     class="row d-flex align-items-center title-box-transaction"
                   >
-                    <div class="col-12 col-md-7">
-                      <p class="title-table-box">Transaction History</p>
+                    <div class="col-12 col-md-5 mt-md-0 mt-3 d-flex align-items-center justify-content-between">
+                      <p class="title-table-box d-md-flex">FAQs</p>
+                      <button class="btn-go-to-shop d-block btn-add-mobile d-md-none"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7 1C7.41648 1 7.7541 1.33762 7.7541 1.7541V6.2459H12.2459C12.6624 6.2459 13 6.58352 13 7C13 7.41648 12.6624 7.7541 12.2459 7.7541H7.7541V12.2459C7.7541 12.6624 7.41648 13 7 13C6.58352 13 6.2459 12.6624 6.2459 12.2459V7.7541H1.7541C1.33762 7.7541 1 7.41648 1 7C1 6.58352 1.33762 6.2459 1.7541 6.2459H6.2459V1.7541C6.2459 1.33762 6.58352 1 7 1Z" fill="#363C3E" stroke="#363C3E" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg></button>
                     </div>
-                    <div class="col-12 col-md-5 input-mt">
-                      <div class="position-relative">
-                        <!-- Occupies 8 columns (3/3 width) on medium screens and up -->
-                        <svg
-                          class="ic-input ic-white"
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="19"
-                          height="19"
-                          viewBox="0 0 19 19"
-                          fill="none"
-                        >
-                          <circle
-                            cx="8"
-                            cy="8"
-                            r="7"
-                            stroke="#7D7D7D"
-                            stroke-width="2"
-                          />
-                          <path
-                            d="M13 13L17.5 18"
-                            stroke="#7D7D7D"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                        </svg>
-                        <input
-                          type="text"
-                          class="form-control input-ic-p"
-                          placeholder="Search"
-                        />
-                      </div>
+                    <div class="col-12 col-md-7 d-flex justify-content-end align-items-center">
+                        <div class="input-mt input-search-ticket">
+                            <div class="position-relative">
+                              <!-- Occupies 8 columns (3/3 width) on medium screens and up -->
+                              <svg
+                                class="ic-input ic-white"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="19"
+                                height="19"
+                                viewBox="0 0 19 19"
+                                fill="none"
+                              >
+                                <circle
+                                  cx="8"
+                                  cy="8"
+                                  r="7"
+                                  stroke="#7D7D7D"
+                                  stroke-width="2"
+                                />
+                                <path
+                                  d="M13 13L17.5 18"
+                                  stroke="#7D7D7D"
+                                  stroke-width="2"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                              <input
+                                type="text"
+                                class="form-control input-ic-p"
+                                placeholder="Search"
+                              />
+                            </div>
+                          </div>
+                          <button class="btn-go-to-shop d-none d-md-block">Add New</button>
                     </div>
                   </div>
-
+                  <div class="box-line d-none d-md-block"></div>
                   <!-- table mobile -->
                   <div class="mt-30 table-mobile">
-                    <!-- table item -->
-                    <div class="table-mb">
+                       <!-- table item -->
+                       <div class="table-mb"> 
                         <div  class="row-table d-flex">
-                            <div class="value-table-mb"><div class="d-flex align-items-center">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  class="ic-table"
-                                  viewBox="0 0 22 22"
-                                  fill="none"
-                                >
-                                  <circle cx="11" cy="11" r="11" fill="#7D7D7D" />
-                                </svg>
-                                fd1fg25...63
-                              </div></div>
+                            <div class="value-table-mb value-table-mb-max"><div class="d-flex justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <input
+                                    class="form-check-input check-box-table"
+                                    type="checkbox"
+                                    value=""
+                                    id="flexCheckDefault"
+                                  />
+                                  #FAQ001
+                                </div>
+                                <div class="d-flex">
+                                    <div>
+                                        <svg class="btn-update" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                            <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                    </div>
+                                    <div><svg class="btn-delete" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                        <path d="M3 6H21" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg></div>
+                                </div>
+                            </div></div>
                         </div>
                         <div  class="row-table d-flex">
-                            <div class="title-table-mb">Username :</div>
-                            <div class="value-table-mb"><span>Bessie Cooper</span></div>
+                            <div class="title-table-mb">Questions :</div>
+                            <div class="value-table-mb"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span></div>
                         </div>
                         <div  class="row-table d-flex">
-                            <div class="title-table-mb">Bitcoin Transaction ID :</div>
-                            <div class="value-table-mb"><span>Bessie Cooper</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Amount :</div>
-                            <div class="value-table-mb"><span>€0.00</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">State :</div>
-                            <div class="value-table-mb"><span class="state-paid">Paid</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Date :</div>
-                            <div class="value-table-mb"><span>2020-05-05 10:21:13</span></div>
+                            <div class="title-table-mb">Category :</div>
+                            <div class="value-table-mb"><span>Payment Processors</span></div>
                         </div> 
                     </div>
-                    <div class="table-mb">
+                       <!-- table item -->
+                       <div class="table-mb"> 
                         <div  class="row-table d-flex">
-                            <div class="value-table-mb"><div class="d-flex align-items-center">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  class="ic-table"
-                                  viewBox="0 0 22 22"
-                                  fill="none"
-                                >
-                                  <circle cx="11" cy="11" r="11" fill="#7D7D7D" />
-                                </svg>
-                                fd1fg25...63
-                              </div></div>
+                            <div class="value-table-mb value-table-mb-max"><div class="d-flex justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <input
+                                    class="form-check-input check-box-table"
+                                    type="checkbox"
+                                    value=""
+                                    id="flexCheckDefault"
+                                  />
+                                  #FAQ001
+                                </div>
+                                <div class="d-flex">
+                                    <div>
+                                        <svg class="btn-update" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                            <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                    </div>
+                                    <div><svg class="btn-delete" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                        <path d="M3 6H21" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg></div>
+                                </div>
+                            </div></div>
                         </div>
                         <div  class="row-table d-flex">
-                            <div class="title-table-mb">Username :</div>
-                            <div class="value-table-mb"><span>Bessie Cooper</span></div>
+                            <div class="title-table-mb">Questions :</div>
+                            <div class="value-table-mb"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span></div>
                         </div>
                         <div  class="row-table d-flex">
-                            <div class="title-table-mb">Bitcoin Transaction ID :</div>
-                            <div class="value-table-mb"><span>Bessie Cooper</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Amount :</div>
-                            <div class="value-table-mb"><span>€0.00</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">State :</div>
-                            <div class="value-table-mb"><span class="state-paid">Paid</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Date :</div>
-                            <div class="value-table-mb"><span>2020-05-05 10:21:13</span></div>
+                            <div class="title-table-mb">Category :</div>
+                            <div class="value-table-mb"><span>Payment Processors</span></div>
                         </div> 
                     </div>
-                    <div class="table-mb">
+                       <!-- table item -->
+                       <div class="table-mb"> 
                         <div  class="row-table d-flex">
-                            <div class="value-table-mb"><div class="d-flex align-items-center">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  class="ic-table"
-                                  viewBox="0 0 22 22"
-                                  fill="none"
-                                >
-                                  <circle cx="11" cy="11" r="11" fill="#7D7D7D" />
-                                </svg>
-                                fd1fg25...63
-                              </div></div>
+                            <div class="value-table-mb value-table-mb-max"><div class="d-flex justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <input
+                                    class="form-check-input check-box-table"
+                                    type="checkbox"
+                                    value=""
+                                    id="flexCheckDefault"
+                                  />
+                                  #FAQ001
+                                </div>
+                                <div class="d-flex">
+                                    <div>
+                                        <svg class="btn-update" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                            <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                    </div>
+                                    <div><svg class="btn-delete" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                        <path d="M3 6H21" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg></div>
+                                </div>
+                            </div></div>
                         </div>
                         <div  class="row-table d-flex">
-                            <div class="title-table-mb">Username :</div>
-                            <div class="value-table-mb"><span>Bessie Cooper</span></div>
+                            <div class="title-table-mb">Questions :</div>
+                            <div class="value-table-mb"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit</span></div>
                         </div>
                         <div  class="row-table d-flex">
-                            <div class="title-table-mb">Bitcoin Transaction ID :</div>
-                            <div class="value-table-mb"><span>Bessie Cooper</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Amount :</div>
-                            <div class="value-table-mb"><span>€0.00</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">State :</div>
-                            <div class="value-table-mb"><span class="state-paid">Paid</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Date :</div>
-                            <div class="value-table-mb"><span>2020-05-05 10:21:13</span></div>
-                        </div> 
-                    </div>
-                    <div class="table-mb">
-                        <div  class="row-table d-flex">
-                            <div class="value-table-mb"><div class="d-flex align-items-center">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  class="ic-table"
-                                  viewBox="0 0 22 22"
-                                  fill="none"
-                                >
-                                  <circle cx="11" cy="11" r="11" fill="#7D7D7D" />
-                                </svg>
-                                fd1fg25...63
-                              </div></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Username :</div>
-                            <div class="value-table-mb"><span>Bessie Cooper</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Bitcoin Transaction ID :</div>
-                            <div class="value-table-mb"><span>Bessie Cooper</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Amount :</div>
-                            <div class="value-table-mb"><span>€0.00</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">State :</div>
-                            <div class="value-table-mb"><span class="state-paid">Paid</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Date :</div>
-                            <div class="value-table-mb"><span>2020-05-05 10:21:13</span></div>
-                        </div> 
-                    </div>
-                    <div class="table-mb">
-                        <div  class="row-table d-flex">
-                            <div class="value-table-mb"><div class="d-flex align-items-center">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  class="ic-table"
-                                  viewBox="0 0 22 22"
-                                  fill="none"
-                                >
-                                  <circle cx="11" cy="11" r="11" fill="#7D7D7D" />
-                                </svg>
-                                fd1fg25...63
-                              </div></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Username :</div>
-                            <div class="value-table-mb"><span>Bessie Cooper</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Bitcoin Transaction ID :</div>
-                            <div class="value-table-mb"><span>Bessie Cooper</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Amount :</div>
-                            <div class="value-table-mb"><span>€0.00</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">State :</div>
-                            <div class="value-table-mb"><span class="state-paid">Paid</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Date :</div>
-                            <div class="value-table-mb"><span>2020-05-05 10:21:13</span></div>
-                        </div> 
-                    </div>
-                    <div class="table-mb">
-                        <div  class="row-table d-flex">
-                            <div class="value-table-mb"><div class="d-flex align-items-center">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  class="ic-table"
-                                  viewBox="0 0 22 22"
-                                  fill="none"
-                                >
-                                  <circle cx="11" cy="11" r="11" fill="#7D7D7D" />
-                                </svg>
-                                fd1fg25...63
-                              </div></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Username :</div>
-                            <div class="value-table-mb"><span>Bessie Cooper</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Bitcoin Transaction ID :</div>
-                            <div class="value-table-mb"><span>Bessie Cooper</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Amount :</div>
-                            <div class="value-table-mb"><span>€0.00</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">State :</div>
-                            <div class="value-table-mb"><span class="state-paid">Paid</span></div>
-                        </div>
-                        <div  class="row-table d-flex">
-                            <div class="title-table-mb">Date :</div>
-                            <div class="value-table-mb"><span>2020-05-05 10:21:13</span></div>
+                            <div class="title-table-mb">Category :</div>
+                            <div class="value-table-mb"><span>Payment Processors</span></div>
                         </div> 
                     </div>
                   </div>
@@ -2263,207 +1748,116 @@
                             ID
                           </th>
                           <th scope="col" class="d-block d-md-table-cell">
-                            Username <span class="d-inline d-md-none">:</span>
+                            Questions
                           </th>
                           <th scope="col" class="d-block d-md-table-cell">
-                            Bitcoin Transaction ID
-                            <span class="d-inline d-md-none">:</span>
+                            Category
                           </th>
-                          <th scope="col" class="d-block d-md-table-cell">
-                            Amount <span class="d-inline d-md-none">:</span>
-                          </th>
-                          <th scope="col" class="d-block d-md-table-cell">
-                            State <span class="d-inline d-md-none">:</span>
-                          </th>
-                          <th scope="col" class="d-block d-md-table-cell">
-                            Date <span class="d-inline d-md-none">:</span>
+                          <th scope="col" class="d-block d-md-flex justify-content-end">
+                            Action
                           </th>
                         </tr>
                       </thead>
                       <tr>
                         <td scope="row" class="d-block d-md-table-cell">
-                          #CS0212
+                            #FAQ001
                         </td>
                         <td class="fs-20 d-block d-md-table-cell">
-                          Bessie Cooper
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
                         </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          f4184fc5964
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">€0.00</td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          <span class="state-paid">Paid</span>
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          2020-05-05 10:21:13
-                        </td>
+                        <td class="fs-20 d-block d-md-table-cell">Payment Processors</td>
+                        <td class="fs-20 d-block d-md-flex justify-content-end">
+                            <div class="d-flex">
+                                <div>
+                                    <svg class="btn-update" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                        <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                </div>
+                                <div><svg class="btn-delete" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                    <path d="M3 6H21" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg></div>
+                            </div>
+                          </td>
                       </tr>
                       <tr>
                         <td scope="row" class="d-block d-md-table-cell">
-                          #CS0212
+                            #FAQ001
                         </td>
                         <td class="fs-20 d-block d-md-table-cell">
-                          Bessie Cooper
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
                         </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          f4184fc5964
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">€0.00</td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          <span class="state-invalid">Invalid</span>
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          2020-05-05 10:21:13
-                        </td>
+                        <td class="fs-20 d-block d-md-table-cell">Payment Processors</td>
+                        <td class="fs-20 d-block d-md-flex justify-content-end">
+                            <div class="d-flex">
+                                <div>
+                                    <svg class="btn-update" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                        <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                </div>
+                                <div><svg class="btn-delete" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                    <path d="M3 6H21" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg></div>
+                            </div>
+                          </td>
                       </tr>
                       <tr>
                         <td scope="row" class="d-block d-md-table-cell">
-                          #CS0212
+                            #FAQ001
                         </td>
                         <td class="fs-20 d-block d-md-table-cell">
-                          Bessie Cooper
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
                         </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          f4184fc5964
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">€0.00</td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          <span class="state-paid">Paid</span>
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          2020-05-05 10:21:13
-                        </td>
+                        <td class="fs-20 d-block d-md-table-cell">Payment Processors</td>
+                        <td class="fs-20 d-block d-md-flex justify-content-end">
+                            <div class="d-flex">
+                                <div>
+                                    <svg class="btn-update" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                        <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                </div>
+                                <div><svg class="btn-delete" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                    <path d="M3 6H21" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg></div>
+                            </div>
+                          </td>
                       </tr>
                       <tr>
                         <td scope="row" class="d-block d-md-table-cell">
-                          #CS0212
+                            #FAQ001
                         </td>
                         <td class="fs-20 d-block d-md-table-cell">
-                          Bessie Cooper
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit
                         </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          f4184fc5964
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">€0.00</td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          <span class="state-pending">Pending</span>
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          2020-05-05 10:21:13
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row" class="d-block d-md-table-cell">
-                          #CS0212
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          Bessie Cooper
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          f4184fc5964
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">€0.00</td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          <span class="state-paid">Paid</span>
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          2020-05-05 10:21:13
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row" class="d-block d-md-table-cell">
-                          #CS0212
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          Bessie Cooper
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          f4184fc5964
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">€0.00</td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          <span class="state-invalid">Sold out</span>
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          2020-05-05 10:21:13
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row" class="d-block d-md-table-cell">
-                          #CS0212
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          Bessie Cooper
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          f4184fc5964
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">€0.00</td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          <span class="state-paid">Paid</span>
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          2020-05-05 10:21:13
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row" class="d-block d-md-table-cell">
-                          #CS0212
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          Bessie Cooper
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          f4184fc5964
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">€0.00</td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          <span class="state-paid">Paid</span>
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          2020-05-05 10:21:13
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row" class="d-block d-md-table-cell">
-                          #CS0212
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          Bessie Cooper
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          f4184fc5964
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">€0.00</td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          <span class="state-paid">Paid</span>
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          2020-05-05 10:21:13
-                        </td>
-                      </tr>
-                      <tr>
-                        <td scope="row" class="d-block d-md-table-cell">
-                          #CS0212
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          Bessie Cooper
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          f4184fc5964
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">€0.00</td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          <span class="state-paid">Paid</span>
-                        </td>
-                        <td class="fs-20 d-block d-md-table-cell">
-                          2020-05-05 10:21:13
-                        </td>
+                        <td class="fs-20 d-block d-md-table-cell">Payment Processors</td>
+                        <td class="fs-20 d-block d-md-flex justify-content-end">
+                            <div class="d-flex">
+                                <div>
+                                    <svg class="btn-update" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                        <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M18.5 2.49998C18.8978 2.10216 19.4374 1.87866 20 1.87866C20.5626 1.87866 21.1022 2.10216 21.5 2.49998C21.8978 2.89781 22.1213 3.43737 22.1213 3.99998C22.1213 4.56259 21.8978 5.10216 21.5 5.49998L12 15L8 16L9 12L18.5 2.49998Z" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                </div>
+                                <div><svg class="btn-delete" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                    <path d="M3 6H21" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M19 6V20C19 21 18 22 17 22H7C6 22 5 21 5 20V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M8 6V4C8 3 9 2 10 2H14C15 2 16 3 16 4V6" stroke="#BBBBBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg></div>
+                            </div>
+                          </td>
                       </tr>
                     </table>
                   </div>
                   <div class="col-lg-12 d-block d-md-none">
-                    <button class="btn-request-transfer mt-2">
+                    <button class="btn-load-more mt-2">
                         Load more
                       </button>
                   </div>

@@ -81,10 +81,6 @@
     padding: 12px 24px !important;
 }
 
-.ic-white > * {
-  stroke: #FFF !important;
-}
-
 .state-paid,
 .state-invalid,
 .state-pending {

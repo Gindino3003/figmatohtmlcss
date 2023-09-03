@@ -348,4 +348,12 @@ html {
     padding: 2px 5px !important;
     border-radius: 5px;
   }
+
+  .sidebar-nav .nav-link > span {
+    font-size: 20px;
+  }
+
+  .sidebar-nav .nav-content a {
+    font-size: 18px;
+  }
 }
