@@ -230,6 +230,22 @@ line-height: 18px; /* 128.571% */
     background-size: auto;
 }
 
+#canvas-select > div {
+  padding: 10px;
+  color: var(--OFC---White, #FFF);
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.canvass-select-item-active{
+  background-color: #222;
+  border-radius: 10px;
+  padding: 12px 16px;
+}
+
 }
 
 /*choose-file-banner  */

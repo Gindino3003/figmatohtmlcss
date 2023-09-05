@@ -174,6 +174,150 @@
   font-size: 18px;
 }
 
+/* chart-sale */
+.chart-sale,.chart-line{
+  background-color: #1D1D1D;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.chart-sale {
+  padding-top: 14px;
+}
+
+.color-swatches {
+  span { display: inline-block; width: 20px; height: 20px; }
+  display: none;
+  display: block;
+}
+
+#doughnut-chart-email-swatches {
+  span._0  { background-color: #3a6d7a; }
+  span._0h { background-color: lighten(#3a6d7a, 10); }
+  span._1  { background-color: #9bbc5b; }
+  span._1h { background-color: lighten(#9bbc5b, 10); }
+}
+
+#bar-chart-email-swatches {
+  span._0  { background-color: #59BAFF; }
+  span._0h { background-color: lighten(#59BAFF, 10); }
+}
+
+.content-section {
+  font-size: 0;
+  line-height: 0;
+  width: 100%;
+}
+
+/* Define the default x-axis color */
+.apexcharts-xaxis-label {
+  fill: #333; /* Default color */
+  transition: fill 0.2s; /* Add transition for smooth color change */
+}
+
+/* Apply hover color to x-axis on hover */
+.apexcharts-container:hover .apexcharts-xaxis-label {
+  fill: #f00; /* Hover color */
+}
+
+#center-text {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  font-weight: bold;
+  color: #FFF;
+font-family: Inter;
+font-size: 1rem;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.more-chart{
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+  color: #FFF6F6;
+font-family: Inter;
+font-size: 0.9rem;
+gap: 10px;
+display: flex;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+align-items: center;
+}
+
+.more-chart > svg {
+  width: 0.7rem;
+  height: 0.7rem;
+}
+
+
+.brick {
+  width: 31.6666%;
+  min-width: 302px;
+  margin: 0;
+  margin-right: 2.5%;
+  margin-bottom: 2.5%;
+  display: inline-block;
+  border: 1px solid darken(#fff, 6);
+  background: #fafaf2;
+  background: darken(#fff, 3);
+  &:nth-child(3) {
+  	margin-right: 0;
+  }
+  padding: 25px;
+  
+  
+  h4 {
+    text-transform: uppercase;
+    font-size: 14px;
+    height: 60px;
+    em {
+      display:block;
+      font-size: 10px;
+    }
+    margin: 0;
+  }
+}
+
+
+
+.brick-chart {
+  .chart {
+      margin: 0 auto;
+      padding: 0;
+      width: 250px;
+      height: 250px;
+    }
+    canvas {
+      width: 250px !important;
+      height: 250px !important;
+    }
+  .legend {
+    width: 250px !important;
+    margin: 0 auto;
+    padding: 10px 0;
+    min-height: 80px;
+    .entry {
+      margin: 5px;
+      line-height: 12px;
+      font-size: 12px;
+      .swatch {
+        display: block;
+        float: left;
+        width: 12px;
+        height: 12px;
+        content: "";
+        margin: 0px 10px 0 0;
+      }
+    }
+  }
+}
+
+
 @media only screen and (max-width: 768px) {
   .upgrade {
     padding: 25px 28px;
@@ -199,6 +343,20 @@ line-height: 24px;
 font-style: normal;
 font-weight: 500;
 line-height: 24px;
+  }
+
+  #center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    font-weight: bold;
+    color: #FFF;
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
   }
 }
 

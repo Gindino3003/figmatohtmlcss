@@ -36,12 +36,22 @@
   color: #da5538;
 }
 
+.chart-line{
+  background-color: #1D1D1D;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.apexcharts-xaxis-label, .apexcharts-yaxis-label {
+  fill: #7D7D7D;
+}
+
 .request-transfer {
   height: 100%;
 }
 
-.select-input{
-
+.select-input > option{
+  background-color: blue;
 }
 .select-input{
     height: 100% !important;

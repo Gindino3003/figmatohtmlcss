@@ -18,6 +18,7 @@
     <link href="./assets/css/appearance.css" rel="stylesheet" />
     <link href="./assets/css/global.css" rel="stylesheet" />
     <link href="./assets/css/header.css" rel="stylesheet" />
+    <link href="./assets/css/canvasedit.css" rel="stylesheet" />
   </head>
   <body>
     <section class="container-fluid main-box">
@@ -77,6 +78,18 @@
           </div>
         </div>
       </div>
+
+<!-- canvas select -->
+    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasBottomLabel">Shop Currency</h5>
+        <svg data-bs-dismiss="offcanvas" aria-label="Close" xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+          <path d="M7.2072 5.29289C6.81668 4.90237 6.18351 4.90237 5.79299 5.29289C5.40246 5.68342 5.40246 6.31658 5.79299 6.70711L11.0858 12L5.79289 17.2929C5.40237 17.6834 5.40237 18.3166 5.79289 18.7071C6.18342 19.0976 6.81658 19.0976 7.20711 18.7071L12.5 13.4142L17.793 18.7071C18.1835 19.0976 18.8167 19.0976 19.2072 18.7071C19.5977 18.3166 19.5977 17.6834 19.2072 17.2929L13.9143 12L19.2071 6.70711C19.5976 6.31658 19.5976 5.68342 19.2071 5.29289C18.8166 4.90237 18.1834 4.90237 17.7929 5.29289L12.5 10.5857L7.2072 5.29289Z" fill="#6F767E"/>
+          </svg>
+      </div>
+      <div id="canvas-select" class="offcanvas-body small">
+      </div>
+    </div>
 
       <div class="">
                <!-- sidebar -->
@@ -1646,9 +1659,11 @@
                   <div class="col-12 col-md-6">
                     <div>
                       <label for="address">Shop Currency</label>
-                      <select
+                      <select 
                       data-style="btn-primary" 
-                        class="form-select custom-select  input-form-ticker"
+                      data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom"
+                        id="mySelect"  
+                      class="form-select custom-select  input-form-ticker"
                         aria-label="Default select example"
                       >
                         <option selected>USD - dollar</option>
@@ -1802,6 +1817,7 @@
 
               <!-- add new ticker -->
               <div class="col-lg-12 bg-secondary rounded-2 p-3">
+                
                 <div class="">
                   <p class="title-table-box">News Ticker</p>
 
@@ -2110,5 +2126,62 @@
         }
       }
     </script>
+
+    
+<script>
+  var selectElement = document.getElementById("mySelect");
+  
+  // Kiểm tra nếu là thiết bị di động dựa trên chiều rộng của cửa sổ
+  function isMobileDevice() {
+      return window.innerWidth < 768; // 768px là ngưỡng bạn có thể điều chỉnh
+  }
+
+  // Lắng nghe sự kiện mousedown để chặn mở rộng danh sách tùy chọn
+  selectElement.addEventListener("mousedown", function (event) {
+      if (isMobileDevice()) {
+          event.preventDefault(); // Chặn mở rộng danh sách trên thiết bị di động
+      }
+  });
+  if (isMobileDevice()) {
+        var divContainer = document.getElementById("canvas-select");
+
+        // Lấy tất cả các thẻ option trong select
+        var options = selectElement.querySelectorAll("option");
+        var selectedOption = selectElement.querySelector("option:checked");
+        // Tạo các thẻ div tương ứng và thêm vào div có id "abc"
+        options.forEach(function (option) {
+            var divElement = document.createElement("div");
+            divElement.textContent = option.textContent;
+            divElement.setAttribute("data-bs-dismiss", "offcanvas");
+            divElement.classList.add("canvass-select-item");
+            
+            if (option === selectedOption) {
+                divElement.classList.add("canvass-select-item-active");
+            }
+            
+             // Thêm sự kiện click cho thẻ div
+             divElement.addEventListener("click", function () {
+                // Set giá trị của select thành giá trị của option tương ứng
+                selectElement.value = option.value;
+
+                // Xóa class "canvass-select-item-active" khỏi tất cả các thẻ div
+                divContainer.querySelectorAll(".canvass-select-item").forEach(function (div) {
+                    div.classList.remove("canvass-select-item-active");
+                });
+
+                // Thêm class "canvass-select-item-active" cho thẻ div được chọn
+                divElement.classList.add("canvass-select-item-active");
+            });
+
+            divContainer.appendChild(divElement);
+      
+        });
+      }else {
+        var divContainer = document.getElementById("mySelect");
+        divContainer.removeAttribute("data-bs-toggle");
+        divContainer.removeAttribute("data-bs-target");
+        divContainer.removeAttribute("aria-controls");
+      }
+</script>
   </body>
 </html>
