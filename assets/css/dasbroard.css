@@ -209,12 +209,10 @@
   width: 100%;
 }
 
-/* Define the default x-axis color */
-.apexcharts-xaxis-label {
-  fill: #333; /* Default color */
-  transition: fill 0.2s; /* Add transition for smooth color change */
+/* Change the color of x-axis labels on hover */
+.apexcharts-inner:hover .apexcharts-xaxis-label text {
+  fill: #ff0000 !important; /* Change this to your desired hover color */
 }
-
 /* Apply hover color to x-axis on hover */
 .apexcharts-container:hover .apexcharts-xaxis-label {
   fill: #f00; /* Hover color */

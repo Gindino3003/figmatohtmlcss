@@ -815,6 +815,27 @@ option {
   fill: #7D7D7D; /* Set the desired label color (red in this example) */
 }
 
+
+.apexcharts-xaxistooltip {
+  background-color: #1D1D1D !important; /* Change this color to your desired background color */
+  color: #fff !important; /* Change this color to your desired text color */
+  border: none !important; /* Add a border if needed */
+  padding: 5px; /* Adjust padding as necessary */
+}
+
+.apexcharts-xaxistooltip::before {
+  display: none !important;
+}
+
+.apexcharts-xaxistooltip-text {
+  font-size: 16px !important;
+  margin-top: -3px;
+}
+
+.custom-tooltip-text {
+  font-size: 20px !important; /* Adjust the font size to your desired value */
+}
+
 .apexcharts-legend-text {
   color: #7D7D7D !important;
   margin-left: -2px !important;
@@ -841,6 +862,10 @@ option {
   border-width: 5px !important;
   border-style: solid !important;
   border-color: transparent transparent #fff transparent !important;
+}
+
+.x-axis-label{
+  color: red !important;
 }
 
 select.custom-select option {

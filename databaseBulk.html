@@ -2533,6 +2533,32 @@ var options = {
     fill: {
         colors: ['#D3F56A'] // Change the line color to red (#FF5733)
     },
+    tooltip: {
+          custom: function ({ seriesIndex, dataPointIndex, ctx }) {
+            // Return today's date and time
+            var currentTime = new Date();
+            // returns the year (four digits)
+            var year = currentTime.getFullYear();
+            var xLabel = ctx.w.globals.categoryLabels[dataPointIndex]; // Get the x-axis label
+            var yValue = ctx.w.globals.series[seriesIndex][
+              dataPointIndex
+            ].toLocaleString("en-US", {
+              style: "currency",
+              currency: "USD",
+              minimumFractionDigits: 2,
+            }); // Get the y-axis value
+            return (
+              '<div class="custom-tooltip"><div class="custom-tooltip-day">' +
+              xLabel +
+              ". " +
+              year +
+              '</div> <div class="custom-tooltip-value">' +
+              yValue +
+              "</div></div>"
+            );
+          },
+          shared: false, // Disable shared tooltip
+        },
     colors: ['#D3F56A']
 };
 

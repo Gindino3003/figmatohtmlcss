@@ -1972,13 +1972,9 @@
               </div>
             </div>
 
-            <div
-              class="col-12 order-md-0 col-md-9"
-            >
-            <div  id="chart-revenue-and-orders" class="chart-line">
-
+            <div class="col-12 order-md-0 col-md-9">
+              <div id="chart-revenue-and-orders" class="chart-line"></div>
             </div>
-          </div>
             <!-- Top products -->
             <div class="col-12 order-md-2 col-md-9">
               <div class="bg-secondary rounded-2 p-3">
@@ -2156,10 +2152,23 @@
             <div class="col-12 order-md-1 col-md-3 position-relative">
               <div id="chart" class="chart-sale"></div>
               <div class="more-chart">
-                More <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
-                  <path d="M7.27197 1L14.544 8.27203L7.67597 15.14" stroke="white" stroke-width="1.71403"/>
-                  <path d="M14.544 8.27203H-5.2385e-05" stroke="white" stroke-width="1.71403"/>
-                  </svg>
+                More
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                >
+                  <path
+                    d="M7.27197 1L14.544 8.27203L7.67597 15.14"
+                    stroke="white"
+                    stroke-width="1.71403"
+                  />
+                  <path
+                    d="M14.544 8.27203H-5.2385e-05"
+                    stroke="white"
+                    stroke-width="1.71403"
+                  />
+                </svg>
               </div>
               <div id="center-text">$35.7K</div>
             </div>
@@ -2216,9 +2225,9 @@
           offsetY: 0,
           floating: false,
           style: {
-            fontSize: '1.2727272727272727rem',
+            fontSize: "1.2727272727272727rem",
             fontWeight: "bold",
-            fontFamily: 'Inter',
+            fontFamily: "Inter",
             color: "#FFF",
           },
         },
@@ -2255,11 +2264,17 @@
       var series = [
         {
           name: "Revenue",
-          data: [8000, 3444, 2222, 4232, 4555, 8544, 7444, 6000, 4536, 2456, 1333, 2444],
+          data: [
+            8000, 3444, 2222, 4232, 4555, 8544, 7444, 6000, 4536, 2456, 1333,
+            2444,
+          ],
         },
         {
           name: "Orders",
-          data: [2334, 4335, 8976, 6645, 1004, 5523, 3333, 4033, 3222, 5333, 4556, 6432],
+          data: [
+            2334, 4335, 8976, 6645, 1004, 5523, 3333, 4033, 3222, 5333, 4556,
+            6432,
+          ],
         },
       ];
 
@@ -2270,22 +2285,48 @@
           type: "line",
           stacked: false,
           zoom: {
-            enabled: false // Disable zoom
-        },
-        toolbar: {
-          show:false
-        }
+            enabled: false, // Disable zoom
+          },
+          toolbar: {
+            show: false,
+          },
         },
         dataLabels: {
           enabled: false,
         },
         noData: {
-        text: 'No data available', // Optional message when there is no data
-    },
-        colors: ["#FF1654", "#D3F56A"],
+          text: "No data available", // Optional message when there is no data
+        },
+        colors: ["#DA5538", "#D3F56A"],
         series: series,
         stroke: {
           width: [4, 4],
+        },
+        tooltip: {
+          custom: function ({ seriesIndex, dataPointIndex, ctx }) {
+            // Return today's date and time
+            var currentTime = new Date();
+            // returns the year (four digits)
+            var year = currentTime.getFullYear();
+            var xLabel = ctx.w.globals.categoryLabels[dataPointIndex]; // Get the x-axis label
+            var yValue = ctx.w.globals.series[seriesIndex][
+              dataPointIndex
+            ].toLocaleString("en-US", {
+              style: "currency",
+              currency: "USD",
+              minimumFractionDigits: 2,
+            }); // Get the y-axis value
+            return (
+              '<div class="custom-tooltip"><div class="custom-tooltip-day">' +
+              xLabel +
+              ". " +
+              year +
+              '</div> <div class="custom-tooltip-value">' +
+              yValue +
+              "</div></div>"
+            );
+          },
+          shared: false, // Disable shared tooltip
         },
         xaxis: {
           categories: [
@@ -2303,22 +2344,19 @@
             "Dec",
           ],
           axisBorder: {
-            color: '#303030' // Set the color of the x-axis line
-        },
-        grid: {
-            show: false // Hide x-axis ticks (grid lines)
-        },
-        labels: {
-          show: true,
-          // showDuplicates: false,
-          // trim: true,
-          style: {
-                colors: '#ff0000'
-          }
-        },
-        axisTicks: {
+            color: "#303030", // Set the color of the x-axis line
+          },
+          grid: {
+            show: false, // Hide x-axis ticks (grid lines)
+          },
+          axisTicks: {
             show: false,
           },
+          labels: {
+      style: {
+        margin: 20, // Add margin to the x-axis labels
+      },
+    }
         },
         legend: {
           position: "top",
@@ -2327,10 +2365,10 @@
           fontSize: "14rem",
           showForSingleSeries: true,
           floating: false,
-          labels: '#7D7D7D',
-          tooltipHoverFormatter: function(seriesName, opts) {
-        return seriesName + ' + <strong>' + opts.w.globals.series[opts.seriesIndex][opts.dataPointIndex] + '</strong>'
-    },
+          labels: "#7D7D7D",
+          tooltipHoverFormatter: function (seriesName, opts) {
+            return (seriesName);
+          },
           markers: {
             width: 8,
             height: 8,
@@ -2355,9 +2393,9 @@
           offsetY: 40,
           floating: false,
           style: {
-            fontSize: '1.2727272727272727rem',
+            fontSize: "1.2727272727272727rem",
             fontWeight: "bold",
-            fontFamily: 'Inter',
+            fontFamily: "Inter",
             color: "#FFF",
           },
         },
@@ -2370,6 +2408,7 @@
             lines: {
               show: false,
             },
+            
           },
           yaxis: {
             lines: {
@@ -2383,30 +2422,19 @@
             left: 20,
           },
         },
-        tooltip: {
-        custom: function({ seriesIndex, dataPointIndex, ctx }) {
-          // Return today's date and time
-var currentTime = new Date()
-// returns the year (four digits)
-var year = currentTime.getFullYear()
-            var xLabel = ctx.w.globals.categoryLabels[dataPointIndex]; // Get the x-axis label
-            var yValue =  ctx.w.globals.series[seriesIndex][dataPointIndex].toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2 })// Get the y-axis value
-            return '<div class="custom-tooltip"><div class="custom-tooltip-day">' + xLabel + '. ' + year + '</div> <div class="custom-tooltip-value">'  + yValue + '</div></div>';
-        },
-        shared: false, // Disable shared tooltip
-        x: {
-            show: true
-        },
-    }
-  
       };
 
-      var chart = new ApexCharts(
+      var chartreve = new ApexCharts(
         document.querySelector("#chart-revenue-and-orders"),
         optionsreve
       );
 
-      chart.render();
+
+      chartreve.render();
+
+      // Add a custom class to the x-axis tooltip text
+const xaxisTooltipText = document.querySelector('.apexcharts-xaxistooltip text');
+xaxisTooltipText.classList.add('custom-tooltip-text');
     </script>
   </body>
 </html>

@@ -2555,11 +2555,17 @@
       var series = [
         {
           name: "Revenue",
-          data: [80000, 34444, 22222, 42322, 45555, 85444, 74444, 60000, 45364, 24567, 13335, 24444],
+          data: [
+            8000, 3444, 2222, 4232, 4555, 8544, 7444, 6000, 4536, 2456, 1333,
+            2444,
+          ],
         },
         {
           name: "Orders",
-          data: [23344, 43356, 89769, 66452, 10044, 55233, 33333, 40333, 32225, 53330, 45569, 64320],
+          data: [
+            2334, 4335, 8976, 6645, 1004, 5523, 3333, 4033, 3222, 5333, 4556,
+            6432,
+          ],
         },
       ];
 
@@ -2570,22 +2576,48 @@
           type: "line",
           stacked: false,
           zoom: {
-            enabled: false // Disable zoom
-        },
-        toolbar: {
-          show:false
-        }
+            enabled: false, // Disable zoom
+          },
+          toolbar: {
+            show: false,
+          },
         },
         dataLabels: {
           enabled: false,
         },
         noData: {
-        text: 'No data available', // Optional message when there is no data
-    },
-        colors: ["#FF1654", "#D3F56A"],
+          text: "No data available", // Optional message when there is no data
+        },
+        colors: ["#DA5538", "#D3F56A"],
         series: series,
         stroke: {
           width: [4, 4],
+        },
+        tooltip: {
+          custom: function ({ seriesIndex, dataPointIndex, ctx }) {
+            // Return today's date and time
+            var currentTime = new Date();
+            // returns the year (four digits)
+            var year = currentTime.getFullYear();
+            var xLabel = ctx.w.globals.categoryLabels[dataPointIndex]; // Get the x-axis label
+            var yValue = ctx.w.globals.series[seriesIndex][
+              dataPointIndex
+            ].toLocaleString("en-US", {
+              style: "currency",
+              currency: "USD",
+              minimumFractionDigits: 2,
+            }); // Get the y-axis value
+            return (
+              '<div class="custom-tooltip"><div class="custom-tooltip-day">' +
+              xLabel +
+              ". " +
+              year +
+              '</div> <div class="custom-tooltip-value">' +
+              yValue +
+              "</div></div>"
+            );
+          },
+          shared: false, // Disable shared tooltip
         },
         xaxis: {
           categories: [
@@ -2603,22 +2635,19 @@
             "Dec",
           ],
           axisBorder: {
-            color: '#303030' // Set the color of the x-axis line
-        },
-        grid: {
-            show: false // Hide x-axis ticks (grid lines)
-        },
-        labels: {
-          show: true,
-          // showDuplicates: false,
-          // trim: true,
-          style: {
-                colors: '#ff0000'
-          }
-        },
-        axisTicks: {
+            color: "#303030", // Set the color of the x-axis line
+          },
+          grid: {
+            show: false, // Hide x-axis ticks (grid lines)
+          },
+          axisTicks: {
             show: false,
           },
+          labels: {
+      style: {
+        margin: 20, // Add margin to the x-axis labels
+      },
+    }
         },
         legend: {
           position: "top",
@@ -2627,10 +2656,10 @@
           fontSize: "14rem",
           showForSingleSeries: true,
           floating: false,
-          labels: '#7D7D7D',
-          tooltipHoverFormatter: function(seriesName, opts) {
-        return seriesName + ' + <strong>' + opts.w.globals.series[opts.seriesIndex][opts.dataPointIndex] + '</strong>'
-    },
+          labels: "#7D7D7D",
+          tooltipHoverFormatter: function (seriesName, opts) {
+            return (seriesName);
+          },
           markers: {
             width: 8,
             height: 8,
@@ -2655,9 +2684,9 @@
           offsetY: 40,
           floating: false,
           style: {
-            fontSize: '1.2727272727272727rem',
+            fontSize: "1.2727272727272727rem",
             fontWeight: "bold",
-            fontFamily: 'Inter',
+            fontFamily: "Inter",
             color: "#FFF",
           },
         },
@@ -2670,6 +2699,7 @@
             lines: {
               show: false,
             },
+            
           },
           yaxis: {
             lines: {
@@ -2683,30 +2713,19 @@
             left: 20,
           },
         },
-        tooltip: {
-        custom: function({ seriesIndex, dataPointIndex, ctx }) {
-          // Return today's date and time
-var currentTime = new Date()
-// returns the year (four digits)
-var year = currentTime.getFullYear()
-            var xLabel = ctx.w.globals.categoryLabels[dataPointIndex]; // Get the x-axis label
-            var yValue =  ctx.w.globals.series[seriesIndex][dataPointIndex].toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2 })// Get the y-axis value
-            return '<div class="custom-tooltip"><div class="custom-tooltip-day">' + xLabel + '. ' + year + '</div> <div class="custom-tooltip-value">'  + yValue + '</div></div>';
-        },
-        shared: false, // Disable shared tooltip
-        x: {
-            show: true
-        },
-    }
-  
       };
 
-      var chart = new ApexCharts(
+      var chartreve = new ApexCharts(
         document.querySelector("#chart-revenue-and-orders"),
         optionsreve
       );
 
-      chart.render();
+
+      chartreve.render();
+
+      // Add a custom class to the x-axis tooltip text
+const xaxisTooltipText = document.querySelector('.apexcharts-xaxistooltip text');
+xaxisTooltipText.classList.add('custom-tooltip-text');
     </script>
   </body>
 </html>
